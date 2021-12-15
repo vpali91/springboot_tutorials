@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head> 
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Result</h1>
+    
+    <table border="1">
+    <tr>
+    <td>ID</td>
+    <td>Name</td>
+    <td>Email</td>
+    </tr>
+    <tr th:each="result : ${result}">
+    <td th:text="${result.id}"> ID</td>
+    <td th:text="${result.name}"> Name</td>
+    <td th:text="${result.email}"> Email</td>
+    <td><a th:href="@{/edit/{id}(id=${result.id})}">Edit</a></td>
+     <td><a th:href="@{/delete/{id}(id=${result.id})}">Delete</a></td>
+    </tr>
+    </table>
+    
+    
+    
+    <a href="/add">Submit another message</a>
+</body>
+</html>
